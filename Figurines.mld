@@ -1,0 +1,13 @@
+
+:::
+FIGURINE: nom, description, votesPositifs, votesNegatifs, nom.1, #pseudo->UTILISATEUR->pseudo
+:::
+UTILISATEUR: pseudo, email
+:
+
+
+:
+IMAGE: contenu, #nom->FIGURINE->nom
+:::
+COMMENTAIRES: Contenu, #nom->FIGURINE->nom, #pseudo->UTILISATEUR->pseudo
+:::
