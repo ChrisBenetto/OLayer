@@ -1,16 +1,24 @@
 require('dotenv').config();
 
 const express = require('express');
-const cors = require('cors');
 const router = require('./app/router');
+const session = require('express-session');
 
 const app = express();
 
+app.set('view engine', 'ejs');
+app.set('views', './app/views');
+
 const port = process.env.PORT || 3000;
 
-app.use(cors('*'));
-
+app.use(express.static('./assets/'));
 app.use(express.urlencoded({ extended: true }));
+
+app.use(session({
+    secret: process.env.SESSION_SECRET,
+    resave: true,
+    saveUninitialized: true
+ }));
 
 app.use(router);
 
