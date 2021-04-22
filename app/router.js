@@ -7,15 +7,15 @@ const userController = require('./controllers/userController')
 /*Page Accueil pour visiteur */
 
 router.get('/', mainController.visitorPage)
-/*
+
 router.route('/signup')
     .get(mainController.showSignUp)
-    .post(mainController.sendSignUp);
+    .post(userController.sendSignUp);
 
 router.route('/login')
     .get(mainController.showLoginPage)
-    .post(mainController.sendLogin);
-
+    .post(userController.sendLogin);
+/*
 router.get('/home' , mainController.homePage);
 router.get('/figurines' , figurineController.showAllFigurines);
 router.get('/figurine/:id' , figurineController.showOneFigurine);

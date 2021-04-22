@@ -1,13 +1,17 @@
 const { User } = require('../models');
 module.exports = {
-    visitorPage : async (req,res) => {
-        try {
-            const categories = await User.findAll();
-            console.log(categories); 
-            res.render('index' , { categories });
-        } catch (error) {
-            console.error(error);
-        }
+
+    visitorPage : (req,res) => {
+        res.render('index');
+    },
+    showSignUp : (req,res) => {
+        res.render('signup');
+    },
+    showLoginPage: (req,res) => {
+        res.render('login');
+    },
+    showhomePage :(req,res) => {
         
     }
+
 };
