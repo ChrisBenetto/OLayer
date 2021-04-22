@@ -1,8 +1,9 @@
-const Category = require('./category');
+const User = require('./user');
 const Picture = require('./picture');
 const Figurine = require('./figurine');
-const User = require('./user');
 const Comment = require('./comment');
+const Category = require('./category');
+
 
 User.hasMany(Figurine , {
     as:'figurines',
@@ -15,13 +16,13 @@ Figurine.belongsTo(User , {
 });
 
 Figurine.belongsTo(Category , {
-    as:'category',
-    foreignKey:category_id
+    as:'figurine_category',
+    foreignKey:'category_id'
 });
 
 Category.hasMany(Figurine , {
     as : 'figurines',
-    foreignKey:category_id
+    foreignKey:'category_id'
 });
 
 Comment.belongsTo(User , {

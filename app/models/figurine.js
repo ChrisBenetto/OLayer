@@ -1,22 +1,22 @@
-const { DataTypes, Model } = require('sequelize');
+const Sequelize = require('sequelize');
 const sequelize = require('../database');
 
-class Figurine extends Model {};
+class Figurine extends Sequelize.Model {};
 
 Figurine.init({
     name: {
-        type: DataTypes.TEXT,
+        type: Sequelize.TEXT,
         allowNull:false
     },
     description: {
-        type: DataTypes.TEXT,
+        type: Sequelize.TEXT,
         allowNull:false
     },
-    nb_upvote: DataTypes.INTEGER,
-    nb_downvote: DataTypes.INTEGER,
+    nb_upvote: Sequelize.INTEGER,
+    nb_downvote: Sequelize.INTEGER,
+},{
 
         sequelize,
         tableName:"figurine"
 });
-
 module.exports = Figurine;

@@ -1,16 +1,17 @@
-const { DataTypes, Model } = require('sequelize');
+const Sequelize = require('sequelize');
 const sequelize = require('../database');
 
-class Picture extends Model {};
+class Picture extends Sequelize.Model {};
 
 Picture.init({
-    
     picture_url: {
-        type: DataTypes.TEXT,
-        allowNull:false
-    },
-        sequelize,
-        tableName:"picture"
-});
+      type: Sequelize.STRING,
+      allowNull: false
+    }
+  },{
+
+    sequelize,
+    tableName:"picture"
+  });
 
 module.exports = Picture;

@@ -8,5 +8,8 @@
 </head>
 <body>
     Coucou Page de visiteur
+    <% for(const user of categories) { %>
+        <h1><%= user.email %></h1>
+    <% } %>
 </body>
 </html>
