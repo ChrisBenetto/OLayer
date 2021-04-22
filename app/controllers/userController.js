@@ -53,6 +53,13 @@ module.exports = {
             if (errors.length) {
                 return res.render('signup', { errors });
             }
+            formData.password = await bcrypt.hash(formData.password, 10);
+            const user = await User.create(formData);
+
+            if (!user) {
+                throw new Error(`User has been created, but no formData returned`);
+            }
+            return res.redirect('/login');
         } catch (error) {
             console.error(error);
         }
