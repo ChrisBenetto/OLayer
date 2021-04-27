@@ -14,11 +14,11 @@ router.route('/signup')
 router.route('/login')
     .get(mainController.showLoginPage)
     .post(userController.sendLogin);
-/*
+
 
 router.use(authMiddleware.checkisMember);
 router.get('/home' , authMiddleware.checkisMember , mainController.homePage);
-router.get('/figurines' , authMiddleware.checkisMember , figurineController.showAllFigurines);
+/*router.get('/figurines' , authMiddleware.checkisMember , figurineController.showAllFigurines);
 router.get('/figurine/:id' , authMiddleware.checkisMember , figurineController.showOneFigurine);
 router.post('/figurine/:id/addComment' , authMiddleware.checkisMember , figurineController.addCommentToFigurine);
 

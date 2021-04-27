@@ -10,8 +10,8 @@ module.exports = {
     showLoginPage: (req,res) => {
         res.render('login');
     },
-    showhomePage :(req,res) => {
-        
+    homePage :(req,res) => {
+        res.render('home');
     }
 
 };

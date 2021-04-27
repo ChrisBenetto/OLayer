@@ -96,6 +96,7 @@ module.exports = {
             if (user && isPasswordValid) {
                 req.session.user = user;
                 delete req.session.user.dataValues.password;
+                console.log(req.session);
 
                 return res.redirect('/home');
             }
