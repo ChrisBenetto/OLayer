@@ -7,6 +7,7 @@ module.exports = {
         const errors = [];
         try {
             const formData = req.body;
+            console.log("Je recois ca " , formData)
             let verifyEmailInDatabase = true;
             if(!formData.name){
                 errors.push({
@@ -54,6 +55,7 @@ module.exports = {
                 return res.render('signup', { errors });
             }
             formData.password = await bcrypt.hash(formData.password, 10);
+            console.log(formData.password)
             const user = await User.create(formData);
 
             if (!user) {
