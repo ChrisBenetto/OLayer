@@ -3,22 +3,22 @@ const emailValidator = require('email-validator');
 const bcrypt = require('bcrypt');
 
 module.exports = {
-    sendSignUp : async (req,res) => {
+    sendSignUp: async (req, res) => {
         const errors = [];
         try {
             const formData = req.body;
-            console.log("Je recois ca " , formData)
+            console.log("Je recois ca ", formData)
             let verifyEmailInDatabase = true;
-            if(!formData.name){
+            if (!formData.name) {
                 errors.push({
-                    fielname:'name',
-                    message:'Votre pseudo est obligatoire'
+                    fielname: 'name',
+                    message: 'Votre pseudo est obligatoire'
                 })
             }
-            if(!emailValidator.validate(formData.email)) {
-                errors.push ({
-                    fieldname:'email',
-                    message:'Cet email est invalide'
+            if (!emailValidator.validate(formData.email)) {
+                errors.push({
+                    fieldname: 'email',
+                    message: 'Cet email est invalide'
                 });
                 verifyEmailInDatabase = false;
             }
@@ -67,24 +67,23 @@ module.exports = {
         }
 
     },
-    sendLogin :async (req, res) => {
+    sendLogin: async (req, res) => {
 
         try {
 
             const formData = req.body;
             const errors = [];
-            console.log(formData);
             if (!emailValidator.validate(formData.email)) {
-                errors.push ({
-                    fieldname:'email',
-                    message:'Couple Email/Mot de passe incorrect'
+                errors.push({
+                    fieldname: 'email',
+                    message: 'Couple Email/Mot de passe incorrect'
                 });
             }
 
             if (formData.password.length < 6) {
-                errors.push ({
-                    fieldname:'password',
-                    message:'Couple Email/Mot de passe incorrect'
+                errors.push({
+                    fieldname: 'password',
+                    message: 'Couple Email/Mot de passe incorrect'
                 });
             }
 
@@ -93,20 +92,16 @@ module.exports = {
                     email: formData.email
                 }
             });
-            console.log(user);
-            console.log('formdata.password' , formData.password);
-            console.log("user.password" , user.password);
             const isPasswordValid = await bcrypt.compare(formData.password, user.password);
-            if(user && isPasswordValid){
-            req.session.user = user;
-            console.log(req.session.user);
-            delete req.session.user.dataValues.password;
+            if (user && isPasswordValid) {
+                req.session.user = user;
+                delete req.session.user.dataValues.password;
 
-            return res.redirect('/home');
-        }
-        } catch (error) {
-                console.error(error);
-                return res.status(500).render('login');
+                return res.redirect('/home');
             }
+        } catch (error) {
+            console.error(error);
+            return res.status(500).render('login');
         }
     }
+}
