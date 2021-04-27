@@ -1,19 +1,19 @@
 module.exports = {
 
-    checkisMember: (request, response, next) => {
+    checkisMember: (req, res, next) => {
 
         // Première chose à faire, vérifier que l'utilisateur est bien connecté
-        if (!request.session.user) {
+        if (!req.session.user) {
             // Je le redirige vers la page de connexion
-            return response.redirect('/');
+            return res.redirect('/');
         }
         next();
     },
 
-    userToLocals: (request, response, next) => {
+    userToLocals: (req, res, next) => {
 
-        if(request.session.user){
-            response.locals.user = request.session.user;
+        if(req.session.user){
+            res.locals.user = req.session.user;
         }
         next();
     }

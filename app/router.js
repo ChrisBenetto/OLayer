@@ -1,10 +1,11 @@
 const express = require('express');
-const router = express.Router();
+
 const mainController = require('./controllers/mainController')
 const figurineController = require('./controllers/figurineController')
 const userController = require('./controllers/userController')
 const authMiddleware = require('./middlewares/authentication');
-/*Page Accueil pour visiteur */
+const router = express.Router();
+
 router.get('/', mainController.visitorPage)
 
 router.route('/signup')
@@ -14,10 +15,9 @@ router.route('/signup')
 router.route('/login')
     .get(mainController.showLoginPage)
     .post(userController.sendLogin);
-
-
+router.get('/logout', userController.logout)
 router.use(authMiddleware.checkisMember);
-router.get('/home' , authMiddleware.checkisMember , mainController.homePage);
+router.get('/home',authMiddleware.userToLocals, mainController.homePage);
 /*router.get('/figurines' , authMiddleware.checkisMember , figurineController.showAllFigurines);
 router.get('/figurine/:id' , authMiddleware.checkisMember , figurineController.showOneFigurine);
 router.post('/figurine/:id/addComment' , authMiddleware.checkisMember , figurineController.addCommentToFigurine);

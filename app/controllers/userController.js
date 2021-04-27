@@ -104,5 +104,9 @@ module.exports = {
             console.error(error);
             return res.status(500).render('login');
         }
+    },
+    logout: (req, res) => {
+        delete req.session.user;
+        res.redirect('/');
     }
 }
