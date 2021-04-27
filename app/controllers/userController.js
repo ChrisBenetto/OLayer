@@ -67,7 +67,46 @@ module.exports = {
         }
 
     },
-    sendLogin : (req,res) => {
+    sendLogin :async (req, res) => {
 
+        try {
+
+            const formData = req.body;
+            const errors = [];
+            console.log(formData);
+            if (!emailValidator.validate(formData.email)) {
+                errors.push ({
+                    fieldname:'email',
+                    message:'Couple Email/Mot de passe incorrect'
+                });
+            }
+
+            if (formData.password.length < 6) {
+                errors.push ({
+                    fieldname:'password',
+                    message:'Couple Email/Mot de passe incorrect'
+                });
+            }
+
+            const user = await User.findOne({
+                where: {
+                    email: formData.email
+                }
+            });
+            console.log(user);
+            console.log('formdata.password' , formData.password);
+            console.log("user.password" , user.password);
+            const isPasswordValid = await bcrypt.compare(formData.password, user.password);
+            if(user && isPasswordValid){
+            req.session.user = user;
+            console.log(req.session.user);
+            delete req.session.user.dataValues.password;
+
+            return res.redirect('/home');
+        }
+        } catch (error) {
+                console.error(error);
+                return res.status(500).render('login');
+            }
+        }
     }
-}
