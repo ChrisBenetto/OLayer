@@ -108,5 +108,8 @@ module.exports = {
     logout: (req, res) => {
         delete req.session.user;
         res.redirect('/');
+    },
+    showProfil : (req,res) => {
+        res.render('profil');
     }
 }

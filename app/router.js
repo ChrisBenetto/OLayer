@@ -25,9 +25,9 @@ router.post('/figurine/:id/addComment' , authMiddleware.checkisMember , figurine
 router.router('/addFigurine')
     .get(authMiddleware.checkisMember , figurineController.showUploadPage)
     .post(authMiddleware.checkisMember , figurineController.sendFigurine);
-
-router.get('/profil', userController.showProfil);
-router.get('/profil/:id' , userController.showAnotherProfil);
-
+*/
+router.get('/profil',authMiddleware.userToLocals,userController.showProfil);
+/*router.get('/profil/:id' , userController.showAnotherProfil);
+router.get('profil/figurines , userController.showMyFigurines);
 */
 module.exports = router;

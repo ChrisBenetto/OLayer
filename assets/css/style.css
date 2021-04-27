@@ -1,0 +1,59 @@
+/*Page Accueil */
+body {
+    font-family: 'Dancing Script', cursive;
+}
+#main__content {
+    box-sizing: border-box;
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+#main__subtitle {
+    margin-left: 2em;
+    font-size: 1.2em;
+}
+
+#main__title {
+    display: block;
+    font-size: 11em;
+}
+#main__navbar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 50px;
+}
+#navbar__items {
+    display: flex;
+    justify-content: space-around;
+    width: 15%;
+    font-size: 1.1em;
+}
+a {
+    text-decoration: none;
+}
+/*
+
+.main__links
+
+
+.main__picture
+*/
+
+/* --------------------------------------------- */
+#title__loginPage {
+    font-size: 5em;
+    margin: 1em 0;
+    
+}
+
+#main__loginPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
