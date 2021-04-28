@@ -1,10 +1,15 @@
 <%- include ('partials/header') %> 
 <body>
-    <% if (locals.errors) { console.log(locals.errors) %>
-        <% for (const error of locals.errors) { %>
-            <p><%= error.message %></p>
-        <% }} %>
         <main id="main__signUpPage">
+            <% if (locals.errors) { %>
+                <article class="message is-danger  is-medium column is-half">
+                    <div class="message-body">
+                <% for (const error of locals.errors) { %>
+                    <p><%= error.message %></p>
+                <% } %>
+                    </div>
+                </article>
+                <% } %>  
             <h1 id="title__signUpPage">S'inscrire</h1>
         <form action="/signup#submit" method="POST" class="column is-half">
             <div class="field">

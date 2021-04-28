@@ -1,4 +1,4 @@
-/*Page Accueil */
+/*Pages visiteur */
 body {
     font-family: 'Dancing Script', cursive;
 }
@@ -36,24 +36,15 @@ body {
 a {
     text-decoration: none;
 }
-/*
-
-.main__links
-
-
-.main__picture
-*/
-
-/* --------------------------------------------- */
 #title__loginPage , #title__signUpPage {
     font-size: 5em;
     margin: 1em 0;
     
 }
-
 #main__loginPage , #main__signUpPage {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+/* Page Membres */
