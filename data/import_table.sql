@@ -57,7 +57,19 @@ INSERT INTO "category" ("content") VALUES ('Warhammer 40k');
 INSERT INTO "figurine" ("name","description","user_id","category_id")
 VALUES('Skink Caméleon' , 'Ma première figurine' , 1 , 1);
 
+INSERT INTO "figurine" ("name","description","user_id","category_id")
+VALUES('Décor Elfique' , 'Mon super décor' , 1 , 1);
+
+INSERT INTO "figurine" ("name","description","user_id","category_id")
+VALUES('Caradryan' , 'Héros Elfe' , 1 , 1);
+
 INSERT INTO "picture" ("picture_url","figurine_id")
-VALUES('test_url' , 1);
+VALUES('assets\img\Yk9nLYdw4WMifMTP.jpg' , 1);
+
+INSERT INTO "picture" ("picture_url","figurine_id")
+VALUES('https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2Fpin%2F667588344745357489%2F&psig=AOvVaw27HwPTeTv0wMKO8yOdu_eR&ust=1619709283047000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCPCDu7adofACFQAAAAAdAAAAABAD' , 2);
+
+INSERT INTO "picture" ("picture_url","figurine_id")
+VALUES('assets\img\shrine-luminor-lumineth-realm-lords.jpg' , 3);
 
 COMMIT;

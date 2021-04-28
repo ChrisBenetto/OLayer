@@ -48,3 +48,11 @@ a {
     align-items: center;
 }
 /* Page Membres */
+header {
+    margin-bottom: 5em;
+}
+#figurine_container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}

@@ -18,8 +18,8 @@ router.route('/login')
 router.get('/logout', userController.logout)
 router.use(authMiddleware.checkisMember);
 router.get('/home',authMiddleware.userToLocals, mainController.homePage);
-/*router.get('/figurines' , authMiddleware.checkisMember , figurineController.showAllFigurines);
-router.get('/figurine/:id' , authMiddleware.checkisMember , figurineController.showOneFigurine);
+router.get('/figurines' , authMiddleware.checkisMember , figurineController.showAllFigurines);
+/*router.get('/figurine/:id' , authMiddleware.checkisMember , figurineController.showOneFigurine);
 router.post('/figurine/:id/addComment' , authMiddleware.checkisMember , figurineController.addCommentToFigurine);
 
 router.router('/addFigurine')
