@@ -1,35 +1,39 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Olayer</title>
-</head>
+<%- include ('partials/header') %> 
 <body>
-    <h1>Page d'inscription</h1>
     <% if (locals.errors) { console.log(locals.errors) %>
         <% for (const error of locals.errors) { %>
             <p><%= error.message %></p>
         <% }} %>
-
-    <form action="/signup#submit" method="POST">
-
-        <label for="name">Votre pseudo</label>
-        <input type="text" name="name" id="name" placeholder="Entrez votre pseudo" required>
-
-        <label for="email">Votre Email</label>
-        <input type="email" name="email" id="email" placeholder="Entrez votre email" required>
-
-        <label for="password">Votre mot de passe</label>
-        <input type="password" name="password" id="password" placeholder="Entrez votre mot de passe" required>
-
-        <label for="passwordConfirm">Votre mot de passe</label>
-        <input type="password" name="passwordConfirm" id="passwordConfirm" placeholder="Confirmer votre mot de passe" required>
-
-
-        <input type="submit" value='Valider !'>
-
+        <main id="main__signUpPage">
+            <h1 id="title__signUpPage">S'inscrire</h1>
+        <form action="/signup#submit" method="POST" class="column is-half">
+            <div class="field">
+                <p class="control">
+                  <input class="input" id="name" name="name" type="text" placeholder="Votre pseudo">
+                </p>
+              </div>
+              <div class="field">
+                <p class="control">
+                  <input class="input" id="email" name="email" type="email" placeholder="Votre email">
+                </p>
+              </div>
+            <div class="field">
+                <p class="control">
+                  <input class="input" id="password" name="password" type="password" placeholder="Mot de passe">
+                </p>
+              </div>
+              <div class="field">
+                <p class="control">
+                  <input class="input" id="passwordConfirm" name="passwordConfirm" type="password" placeholder="Confirmer le mot de passe">
+                </p>
+              </div>
+              <div class="field">
+                <p class="control">
+                  <input type="submit" class="button is-success" value="S'inscrire">
+                </p>
+              </div>
+        </form>
+    </main>
     </form>
 </body>
 </html>
