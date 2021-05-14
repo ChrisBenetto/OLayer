@@ -11,5 +11,21 @@ module.exports = {
             console.error(error);
         }
         
+    },
+    showOneFigurine : async (req,res) => {
+        try {
+            const figurineId = parseInt(req.params.id , 10 );
+            console.log("FIGURINE ID : " , figurineId);
+            if(!figurineId) {
+                res.render('error404');
+            }
+            const figurine = await Figurine.findByPk(figurineId , ({
+                include : ['user_figurines','figurine_category','figurine_pictures']
+            }));
+            res.render('detail' , {figurine});
+
+        } catch (error) {
+            console.error(error)
+        }
     }
 }
