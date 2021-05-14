@@ -1,0 +1,68 @@
+<%- include('partials/header')%>
+<body>
+    
+    <%- include ('partials/navbar') %>
+    <h1>Je suis dans la partie ajout de figurine</h1>
+    <% if (locals.errors) { %>
+        <article class="message is-danger  is-medium column is-half">
+            <div class="message-body">
+        <% for (const error of locals.errors) { %>
+            <p><%= error.message %></p>
+        <% } %>
+            </div>
+        </article>
+        <% } %> 
+    <form action="" method="POST" class="column is-full">
+
+    <div class="field column is-half">
+        <label class="label">Nom de la figurine</label>
+        <div class="control">
+          <input class="input" id="name" name="name"type="text" placeholder="Nom de la figurine">
+        </div>
+    </div>  
+
+    <div class="field column is-half">
+    <label class="label">Catégorie</label>
+    <div class="select">
+        <select id="category" name="category">
+          <option>Choisissez une categorie</option>
+          <% for ( const category of categories) { %>
+            <option value="<%= category.content %>"> <%= category.content %> </option>
+            <% } %>
+        </select>
+      </div>
+    </div>
+
+      <div class="field column is-half">
+        <label class="label">Description</label>
+        <div class="control">
+          <textarea class="textarea" id="description" name="description" placeholder="Petite description , explication peintures utilisées et techniques ..."></textarea>
+        </div>
+      </div>
+      <div class="file has-name column is-half">
+        <label class="file-label">
+          <input id="file-js" class="file-input" type="file" id="picture_url" name="picture_url">
+          <span class="file-cta">
+            <span class="file-icon">
+              <i class="fas fa-upload"></i>
+            </span>
+            <span class="file-label">
+              Choisissez une image
+            </span>
+          </span>
+          <span class="file-name">
+              Lien de l'image
+          </span>
+        </label>
+      </div>
+      <div class="field is-grouped column is-half">
+        <div class="control">
+          <button class="button is-link">Envoyer</button>
+        </div>
+        <div class="control">
+          <button class="button is-link is-light">Annuler</button>
+        </div>
+      </div>
+    </form>
+</body>
+</html>

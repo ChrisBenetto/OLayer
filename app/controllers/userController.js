@@ -109,7 +109,7 @@ module.exports = {
         delete req.session.user;
         res.redirect('/');
     },
-    showProfil : (req,res) => {
+    showProfil : (_,res) => {
         res.render('profil');
     }
 }
