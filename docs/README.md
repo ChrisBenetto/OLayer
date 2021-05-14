@@ -66,7 +66,7 @@ Au niveau de l'architecture , je vais partir sur un modèle MVC avec l'ORM Seque
 
 Niveau Front , je vais faire en JS Natif et je vais designer avec la libraire Bulma .
 
-Ce site sera desktop-first car le projet pour la V2 est une application mobile avec React-Native ( L'ajout de React sur le desktop se fera une fois la V1 terminée qui sera axé davantage sur le backend ).
+Ce site sera desktop-first ( L'ajout de Vue sur le desktop se fera une fois la V1 terminée qui sera axé davantage sur le backend ).
 
 -----------------------------------------
 
@@ -74,7 +74,7 @@ Ce site sera desktop-first car le projet pour la V2 est une application mobile a
 
 * Ajouter un critère Peintre Amateur , Peintre Professionel à l'inscription et à la publication
 * Trier par critère les figurines , menu de filtres , champ texte de recherche en dynamique
-* Ajout de React.js pour la partie Front
+* Ajout de Vue.js pour la partie Front
 * Adapter site pour tablette
 * Ajout d'une partie blog qui comprendrait des articles / tutoriel sur la peinture 
 * Ajouter la modification de langue ( Anglais )
