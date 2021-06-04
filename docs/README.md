@@ -61,8 +61,7 @@ Pour la V1 du site , j'ai défini ci-dessous les premières Users Stories .
 
 
 J'ai décidé de partir sur un Backend en Node.js avec Express et de faire une base de données relationnelle avec PostgreSQL .
-Au niveau de l'architecture , je vais partir sur un modèle MVC avec l'ORM Sequelize avec une programmation en Orienté Objet et crée une API REST.
-
+Au niveau de l'architecture , je vais partir sur un modèle MVC avec l'ORM Sequelize avec une programmation en Orienté Objet.
 
 Niveau Front , je vais faire en JS Natif et je vais designer avec la libraire Bulma .
 
